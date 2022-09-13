@@ -56,7 +56,7 @@ class Video:
         if not self.use_fullframe:
             # only use bottom half of the frame by default
             img = img[self.height // 2:, :]
-        config = '--tessdata-dir "{}"'.format(constants.TESSDATA_DIR)
+        config = '--tessdata-dir "{}"'.format('/content/tessdata')
         try:
             return pytesseract.image_to_data(img, lang=self.lang, config=config)
         except Exception as e:
